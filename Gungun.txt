@@ -1,0 +1,280 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 85%;
+  max-width: 320px;
+  background: white;
+  border-radius: 22px;
+  padding: 24px 18px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  overflow: hidden;
+}
+
+#slide1 { transform: translateX(0); }
+#slide2, #slide3, #slide4, #slide5, #slide6, #slide7, #slide8, #slide9, #slide10 {
+  transform: translateX(120%);
+  opacity: 0;
+}
+
+.show {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+}
+
+.hide-left {
+  transform: translateX(-120%) !important;
+  opacity: 0 !important;
+}
+
+h1 { color: #ff4d6d; }
+p { font-size: 14px; line-height: 1.5; }
+
+button {
+  width: 80%;
+  padding: 14px;
+  margin: 12px auto;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  display: block;
+  color: white;
+}
+
+.main-btn, #yesBtn { background: #ff4d6d; }
+#noBtn { background: #bdbdbd; }
+
+/* floating background */
+.float-bg span {
+  position: absolute;
+  bottom: -80px;
+  animation: floatUp linear infinite;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.balloon {
+  width: 28px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+.heart {
+  font-size: 22px;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 0; }
+  to { transform: translateY(-160vh); opacity: 1; }
+}
+
+/* fade */
+.fade {
+  animation: fadeIn 1.1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- SLIDE 1 -->
+<div class="slide show" id="slide1">
+  <h1>Hey Darling 👀</h1>
+  <p>I made something for you </p>
+  <button class="main-btn" onclick="goToSlide('slide1','slide2')">Click me ❤️</button>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide" id="slide2">
+  <h1>But first answer me this  😳</h1>
+  <p>Do you love me 😋🫶🏻❤️</p>
+  <button id="noBtn" onclick="fakeNo()">No 😅</button>
+  <button id="yesBtn" onclick="goToSlide('slide2','slide3')">Yes 💕</button>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide" id="slide3" onclick="goToSlide('slide3','slide4')">
+  <div class="float-bg">
+    <span class="balloon" style="left:10%;background:#ff4d6d;animation-duration:6s;"></span>
+    <span class="heart" style="left:40%;animation-duration:5s;">❤️</span>
+    <span class="balloon" style="left:70%;background:#ffd166;animation-duration:6.5s;"></span>
+  </div>
+  <h1 class="fade">🎂 Happy Birthday, Darling ❤️</h1>
+  <p class="fade">I've been waiting for this day since I met you.</p>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide" id="slide4" onclick="goToSlide('slide4','slide5')">
+  <div class="float-bg">
+    <span class="heart" style="left:20%;animation-duration:5s;">💖</span>
+    <span class="balloon" style="left:50%;background:#6ecbff;animation-duration:6s;"></span>
+    <span class="heart" style="left:80%;animation-duration:5.5s;">💞</span>
+  </div>
+  <p class="fade">
+    I was never expecting my life to take a turn like this when I'll meet someone online and fall in love with them so deeply who would have thought 😹
+    <br><br>
+    But here I am today with you
+    <br><br>
+    I never thought that I'll spent so much time with you and have the patience to be with you for an entire year, but I did that, and that's amazing 🫶🏻😝
+  </p>
+</div>
+
+<!-- SLIDE 5 -->
+<div class="slide" id="slide5" onclick="goToSlide('slide5','slide6')">
+  <div class="float-bg">
+    <span class="balloon" style="left:25%;background:#ffadad;animation-duration:6s;"></span>
+    <span class="heart" style="left:65%;animation-duration:5s;">🥰</span>
+  </div>
+  <p class="fade">
+    I know that there is a time when I don't understand you and you don't understand me 💔🥹
+    <br><br>
+    But still, we are here with each other, and that's the whole point of love 🥰❤️
+    <br><br>
+    We don't give up on the person we love 💞
+    <br><br>
+    There are times when we fight with each other a lot 👺🥀
+    <br><br>
+    But at the end of the day, we know that we love each other
+  </p>
+</div>
+
+<!-- SLIDE 6 -->
+<div class="slide" id="slide6" onclick="goToSlide('slide6','slide7')">
+  <div class="float-bg">
+    <span class="heart" style="left:15%;animation-duration:4.5s;">❤️</span>
+    <span class="heart" style="left:45%;animation-duration:5s;">💖</span>
+    <span class="heart" style="left:75%;animation-duration:4.8s;">💞</span>
+  </div>
+  <p class="fade">
+    I LOVE YOU ❤️🥹<br>I LOVE YOU ❤️🥹<br>I LOVE YOU ❤️🥹<br>
+    I LOVE YOU ❤️🥹<br>I LOVE YOU ❤️🥹<br>I LOVE YOU ❤️🥹<br>
+    I LOVE YOU ❤️🥹<br>I LOVE YOU ❤️🥹<br>I LOVE YOU ❤️🥹<br>
+    I LOVE YOU ❤️🥹
+  </p>
+</div>
+
+<!-- SLIDE 7 -->
+<div class="slide" id="slide7" onclick="goToSlide('slide7','slide8')">
+  <div class="float-bg">
+    <span class="heart" style="left:20%;animation-duration:4.5s;">❤️</span>
+    <span class="heart" style="left:50%;animation-duration:5s;">💖</span>
+    <span class="heart" style="left:80%;animation-duration:4.8s;">💞</span>
+  </div>
+  <p class="fade">
+    I LOVE YOU ❤️🥹<br>I LOVE YOU ❤️🥹<br>I LOVE YOU ❤️🥹<br>
+    I LOVE YOU ❤️🥹<br>I LOVE YOU ❤️🥹<br>I LOVE YOU ❤️🥹<br>
+    I LOVE YOU ❤️🥹<br>I LOVE YOU ❤️🥹<br>I LOVE YOU ❤️🥹<br>
+    I LOVE YOU ❤️🥹
+  </p>
+</div>
+
+<!-- SLIDE 8 -->
+<div class="slide" id="slide8" onclick="goToSlide('slide8','slide9')">
+  <div class="float-bg">
+    <span class="balloon" style="left:20%;background:#ff4d6d;animation-duration:6s;"></span>
+    <span class="heart" style="left:50%;animation-duration:5s;">❤️</span>
+    <span class="balloon" style="left:80%;background:#ffd166;animation-duration:6.5s;"></span>
+  </div>
+  <p class="fade">
+    My darling🥹❤️<br><br>
+    You are the most precious person I have ever loved.
+    You make me whole in ways I never dreamed.
+    <br><br>
+    You are like a star that I can't look away from.
+    <br><br>
+    You are my💞 light, and I adore you.🫶🏻
+  </p>
+</div>
+
+<!-- SLIDE 9 -->
+<div class="slide" id="slide9" onclick="goToSlide('slide9','slide10')">
+  <div class="float-bg">
+    <span class="balloon" style="left:15%;background:#6ecbff;animation-duration:6s;"></span>
+    <span class="heart" style="left:45%;animation-duration:5s;">💖</span>
+    <span class="balloon" style="left:75%;background:#ffadad;animation-duration:6.5s;"></span>
+  </div>
+  <p class="fade">
+    I wanted to make you feel special on this day 😉
+    <br><br>
+    So I made this slide for you, and it took me a lot of time🫡
+    <br><br>
+    But if it made you even a little bit happy or it made you smile,
+    it is worth my every single effort 🤗💞
+  </p>
+</div>
+
+<!-- SLIDE 10 -->
+<div class="slide" id="slide10">
+  <div class="float-bg">
+    <span class="balloon" style="left:10%;background:#ff4d6d;animation-duration:6s;"></span>
+    <span class="heart" style="left:35%;animation-duration:5s;">❤️</span>
+    <span class="balloon" style="left:60%;background:#ffd166;animation-duration:6.5s;"></span>
+    <span class="heart" style="left:85%;animation-duration:5.5s;">💞</span>
+  </div>
+  <p class="fade">
+    It's your day, darling 🤗❤️
+    <br><br>
+    Enjoy it at your fullest 🤪
+    <br><br>
+    May all blessings sign upon you, and you feel the best in this world,
+    full of happiness 🙃🫶🏻
+    <br><br>
+    And if you'll be happy, I'll be happy too,
+    because you know that you are my world 🥹🥀
+    <br><br>
+    So ones again
+    <br><br>
+    <strong>HAPPY BIRTHDAY GUNGUN 💞❤️</strong>
+  </p>
+</div>
+
+<script>
+var noCount = 0;
+
+function vibrate(ms) {
+  if (navigator.vibrate) navigator.vibrate(ms);
+}
+
+function goToSlide(from, to) {
+  vibrate(40);
+  document.getElementById(from).classList.add("hide-left");
+  document.getElementById(to).classList.add("show");
+}
+
+function fakeNo() {
+  noCount++;
+  vibrate(40);
+  var btn = document.getElementById("noBtn");
+
+  if (noCount === 1) btn.innerHTML = "Ye kya Bol rhi 😔💔";
+  else if (noCount === 2) btn.innerHTML = "Aisa na bolo jannu 🥹❤️";
+  else if (noCount === 3) btn.innerHTML = "PAKKA NA ? 🥲";
+  else if (noCount === 4) btn.innerHTML = "Yes ( there is no running away ) 😌";
+  else goToSlide("slide2","slide3");
+}
+</script>
+
+</body>
+</html>
